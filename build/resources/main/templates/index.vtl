@@ -1,7 +1,11 @@
 <h1>Places I've been!</h1>
 
 New place:
-$place.getDescription()
+<ul>
+#foreach ($place in $places)
+  <li>$place.getDescription()</li>
+#end
+</ul>
 
 <p>Add a new place that you've been.</p>
 
