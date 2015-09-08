@@ -12,7 +12,7 @@ public class AppTest extends FluentTest {
 
   @Override
   public WebDriver getDefaultDriver() {
-      return webDriver;
+    return webDriver;
   }
 
   @ClassRule
@@ -20,8 +20,8 @@ public class AppTest extends FluentTest {
 
   @Test
   public void rootTest() {
-      goTo("http://localhost:4567/");
-      assertThat(pageSource()).contains("Places I've been!");
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Places I've been!");
   }
 
   @Test
@@ -33,13 +33,13 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-    public void placeIsDisplayedTest() {
-      goTo("http://localhost:4567/");
-      fill("#newPlace").with("Portland");
-      submit(".btn");
-      click("a", withText("Go Back"));
-      assertThat(pageSource()).contains("Portland");
-    }
+  public void placeIsDisplayedTest() {
+    goTo("http://localhost:4567/");
+    fill("#newPlace").with("Portland");
+    submit(".btn");
+    click("a", withText("Go Back"));
+    assertThat(pageSource()).contains("Portland");
+  }
 
   @Test
   public void multipleplacesDisplayedTest() {
@@ -61,5 +61,4 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Portland");
     assertThat(pageSource()).contains("California");
   }
-
 }
